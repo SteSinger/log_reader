@@ -1,0 +1,14 @@
+{
+  "name": "logreader",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "SteSinger <singer.stephan@googlemail.com>"
+  ],
+
+  "dependencies": {
+    "angular-material": "~0.11.4",
+    "angular-route": "~1.4.7",
+    "angular": "~1.4.7"
+  }
+}
