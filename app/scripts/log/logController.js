@@ -6,9 +6,7 @@
     angular.module('app').controller('logController', ['$scope', LogController]);
 
     function LogController($scope) {
-        $scope.logs = [{ name: 'test' }];
         LoadLog(process.cwd() + '/logs/test.txt', $scope);
-        $scope.logs.push({ name: 'test1' });
     }
 
 
@@ -27,8 +25,8 @@
 
         rd.on('close', function () {
             console.log('done');
-            $scope.logs = logs;
-            $scope.$apply();
+            $scope.logs = new NgTableParams({}, {dataset: logs});
+            //$scope.$apply();
         });
 
     }

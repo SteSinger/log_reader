@@ -1,10 +1,10 @@
 <div>
 </div>
-  
-  <table>
-    <tr ng-repeat="log in logs" ng-class="{'error': log.type == 'E'}">
-      <td>{{log.type}}</td>
-      <td>{{log.date | date:'medium'}}</td>
-      <td>{{log.content}}</td>
-    </tr>
-  </table>
+
+<table ng-table="vm.logs" class="table" show-filter="true">
+  <tr ng-repeat="log in $data" class="{{log.type}}">
+    <td title = "'Type'" filter="{type: 'text'}">{{log.type}}</td>
+    <td title = "'Date'" sortable="'date'">{{log.date | date:'medium'}}</td>
+    <td title = "'Content'">{{log.content}}</td>
+  </tr>
+</table>

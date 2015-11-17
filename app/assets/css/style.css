@@ -1,3 +1,15 @@
-.error{
+.E{
 	color: red;
+}
+
+.D{
+	color: grey;
+}
+
+.I{
+	color: green;
+}
+
+tr{
+	width: 100%;
 }

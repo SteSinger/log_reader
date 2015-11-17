@@ -7,7 +7,8 @@
     angular.module('app', [
         'ngRoute',
         'ngMaterial',
-        'ngAnimate'
+        'ngAnimate',
+        'ngTable'
     ])
     .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', {

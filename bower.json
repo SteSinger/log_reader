@@ -5,10 +5,10 @@
   "authors": [
     "SteSinger <singer.stephan@googlemail.com>"
   ],
-
   "dependencies": {
     "angular-material": "~0.11.4",
     "angular-route": "~1.4.7",
-    "angular": "~1.4.7"
+    "angular": "~1.4.7",
+    "ng-table": "~0.8.3"
   }
 }
