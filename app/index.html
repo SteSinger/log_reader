@@ -12,8 +12,9 @@
     
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- endbuild -->
-<body>
+<body id="dropTarget">
     <ng-view></ng-view>
+    
     <!-- build:js scripts/vendor.js -->
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
@@ -23,8 +24,10 @@
     <script src="../bower_components/ng-table/dist/ng-table.js"></script>
     <!-- endbuild -->
    
+   <script src="./scripts/drop.js"></script>
     <!-- build:app scripts/app.js -->
     <script src="./scripts/app.js"></script>
+    <script src="./scripts/log/parserService.js"></script>
     <script src="./scripts/log/logController.js"></script>
 
     <!-- endbuild -->

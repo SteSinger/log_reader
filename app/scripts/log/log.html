@@ -1,7 +1,7 @@
-<table ng-table="_ctrl.tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
-  <tr ng-repeat="log in $data" class="{{log.type}}">
-    <td title = "'Type'" filter="{type: 'text'}" class="small"><div class="small">{{log.type}}<div></td>
-    <td title = "'Date'" sortable="'date'" class="medium"><div class="medium">{{log.date | date:'medium'}}<div></td>
-    <td title = "'Content'" filter="{type: 'text'}" class="reminder"><div class="reminder">{{log.content}}</div></td>
-  </tr>
-</table>
+  <table ng-table="_ctrl.tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
+    <tr ng-repeat="log in $data" class="{{log.type}}">
+      <td title = "'Type'" filter="{type: 'text'}" class="small"><div class="small">{{log.type}}<div></td>
+      <td title = "'Date'" sortable="'date'" class="medium"><div class="medium">{{log.date | date:'medium'}}<div></td>
+      <td title = "'Content'" filter="{type: 'text'}" class="reminder"><div class="reminder">{{log.content}}</div></td>
+    </tr>
+  </table>
