@@ -8,7 +8,7 @@
         'ngRoute',
         'ngMaterial',
         'ngAnimate',
-        'ngTable'
+        'smart-table'
     ])
     .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', {

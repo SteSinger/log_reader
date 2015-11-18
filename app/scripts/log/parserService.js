@@ -9,7 +9,8 @@
 		var logs = [];
 		var parseFile = function (file) {
 			return $q(function (resolve, reject) {
-				
+				console.log('Started parsing file:');
+				console.log(file);
 				logs = [];
 				
 				if(!(file instanceof File)) {
@@ -32,7 +33,8 @@
 				});
 
 				rd.on('close', function () {
-					resolve(logs);
+					console.log('Finished parsing file.');
+					resolve(logs);					
 				});
 			});
 		};

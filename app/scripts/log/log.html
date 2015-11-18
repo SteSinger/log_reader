@@ -1,7 +1,23 @@
-  <table ng-table="_ctrl.tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
-    <tr ng-repeat="log in $data" class="{{log.type}}">
-      <td title = "'Type'" filter="{type: 'text'}" class="small"><div class="small">{{log.type}}<div></td>
-      <td title = "'Date'" sortable="'date'" class="medium"><div class="medium">{{log.date | date:'medium'}}<div></td>
-      <td title = "'Content'" filter="{type: 'text'}" class="reminder"><div class="reminder">{{log.content}}</div></td>
+<table st-safe-src="logs" st-table="tmp" class="table table-condensed table-bordered table-striped" show-filter="true">
+    <thead>
+	<tr>
+		<th class="small" st-sort="type">Type</th>
+		<th class="medium" st-sort="date">Date</th>
+		<th class="reminder" st-sort="content">Content</th>		
+	</tr>
+	</thead>
+  <tbody>
+    <tr ng-repeat="log in tmp" class="{{log.type}}">
+      <td class="small"><div class="small">{{log.type}}<div></td>
+      <td class="medium"><div class="medium">{{log.date | date:'medium'}}<div></td>
+      <td class="reminder"><div class="reminder">{{log.content}}</div></td>
     </tr>
+   </tbody>
+	<tfoot>
+	<tr>
+		<td colspan="3" class="text-center">
+			<div  st-items-by-page="200" st-pagination="" st-template="paginationTemplate.html"></div>
+		</td>
+	</tr>
+	</tfoot>
   </table>
