@@ -13,3 +13,15 @@
 tr{
 	width: 100%;
 }
+
+.small{
+	width: 20px;
+}
+
+.medium{
+	width: 190px;
+}
+
+.remainder{
+	width: 100%;
+}
