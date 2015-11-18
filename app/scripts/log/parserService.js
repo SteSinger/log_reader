@@ -5,11 +5,22 @@
 	angular.module('app').factory('parser', ['$q', parser]);
 
 	function parser($q) {
-		var self = this;
-		self.logs = [];
-
-		self.parseFile = function (file) {
+		
+		var logs = [];
+		var parseFile = function (file) {
 			return $q(function (resolve, reject) {
+				
+				logs = [];
+				
+				if(!(file instanceof File)) {
+					reject('Call with file as parameter');
+				}
+				
+				// if(file.type != "text/plain")
+				// {
+				// 	reject('Provide a textfile. Type is: ' + file.type);
+				// }
+				
 				var rd = readline.createInterface({
 					input: fs.createReadStream(file.path),
 					output: null,
@@ -17,17 +28,17 @@
 				});
 
 				rd.on('line', function (line) {
-					self._parseLine(line)
+					_parseLine(line)
 				});
 
 				rd.on('close', function () {
-					resolve(self.logs);
+					resolve(logs);
 				});
 			});
 		};
 
 
-		self._parseLine = function (line) {
+		var _parseLine = function (line) {
 
 			var logLine = {};
 
@@ -52,8 +63,8 @@
 				logLine.content = line.substring(pos + 3).trim();
 			}
 
-			self.logs.push(logLine);
+			logs.push(logLine);
 		}
-		return self;
+		return {parseFile: parseFile};
 	}
 })();

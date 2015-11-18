@@ -4,10 +4,26 @@
 
     function LogController($scope, NgTableParams, parser) {
         var self = this;
+       	var target = document.getElementById('dropTarget');
+	
+        target.ondragover = function(e) {
+            e.preventDefault();
+            return false;
+        }
+        target.ondragend = function(e) {
+            e.preventDefault();
+            return false;
+        }
         
-        var test = {path: process.cwd() + '/logs/test.txt'};
         
-        parser.parseFile(test).then(setTableParams, error);
+        target.ondrop = function(e) {
+            e.preventDefault();
+            
+            var file = e.dataTransfer.files[0];
+            parser.parseFile(file).then(setTableParams, error);
+            
+            return false;
+        }
         
         self.tableParams = new NgTableParams({ count: 200 }, { counts: [50, 100, 200, 500]});
                 
@@ -16,7 +32,7 @@
         }
         
         function error(msg) {
-            console.log(error);
+            console.log(msg);
         }
         
         
