@@ -5,6 +5,17 @@
 		<th class="medium" st-sort="date">Date</th>
 		<th class="reminder" st-sort="content">Content</th>		
 	</tr>
+	 <tr>
+            <th class="small">
+                <input st-search="type" placeholder="" class="input-sm form-control" type="search"/>
+            </th>
+            <th class="medium">
+                <st-date-range predicate="date" before="query.before" after="query.after"></st-date-range>
+            </th>
+            <th class="reminder">
+                <input st-search="content" placeholder="search for content" class="input-sm form-control" type="search"/>
+            </th>            
+        </tr>
 	</thead>
   <tbody>
     <tr ng-repeat="log in tmp" class="{{log.type}}">
